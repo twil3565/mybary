@@ -4,9 +4,11 @@ const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
+
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
+const chartRouter = require('./routes/charts')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -27,5 +29,6 @@ db.once('open', () => console.log('Connected to Mongoose'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
 app.use('/books', bookRouter)
+app.use('/charts', chartRouter)
 
 app.listen(process.env.PORT || 3000)

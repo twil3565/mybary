@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+
+    <body>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+     <p> hellow world, charts</p>
+<div style="width: 400px;" >
+     <canvas id="lineChart" height="400" width="400"></canvas>
+</div>     
+<script>
+const CHART = document.getElementById("lineChart");
+
+
+var lineChart = new Chart(CHART, {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Populations",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Basic Bar Chart'
+      }
+    }
+});
+</script>
+
+
+    </body>
+
+</html>
